@@ -6,16 +6,21 @@ using CuaHangDienThoai.Extensions;
 using CuaHangDienThoai.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace CuaHangDienThoai.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class HangsController : Controller
+    public class HangsController : ControllerTempateMethod
     {
         private readonly MobileContext _mb;
-        public HangsController(MobileContext mb)
+        private readonly ILogger<HangsController> _logger;
+        public HangsController(MobileContext mb, ILogger<HangsController> logger)
         {
             _mb = mb;
+            _logger = logger;
+            CategorySingleton.Instance.Init(mb);
+            PrintInformation();
         }
         public IActionResult Index()
         {
@@ -23,10 +28,11 @@ namespace CuaHangDienThoai.Areas.Admin.Controllers
             if (Role != null)
             {
                 // ViewBag.khachHangAndDonHangs = News.SendName(_mb);
-                //return View(_mb.Hang.ToList());
+               
                 
                 var items = CategorySingleton.Instance.listCatgegory;
-                return View(items);
+                //return View(items);
+                return View(_mb.Hang.ToList());
                 //return View(items);
             }
             else
@@ -108,5 +114,24 @@ namespace CuaHangDienThoai.Areas.Admin.Controllers
             return View(hang);
         }
 
+        protected override void PrintRoutes()
+        {
+            _logger.LogDebug($@"{GetType().Name}==
+                Routes:
+                Get: Admin/Hangs
+                Get: Admin/Hangs/Create
+                Post: Admin/Hangs/Edit?MaHang=1
+=======");
+        }
+
+        protected override void PrintDIs()
+        {
+            _logger.LogDebug($@"=====
+               Denpencies:
+                 MobileContext _mb
+                 ILogger<HangsController> _logger
+                
+====");
+        }
     }
 }

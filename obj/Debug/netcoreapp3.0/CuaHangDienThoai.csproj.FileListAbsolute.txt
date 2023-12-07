@@ -1109,3 +1109,4 @@ D:\Mẫu TKPM\Project\CuaHangDienThoai\CuaHangDienThoai\obj\Debug\netcoreapp3.0\
 D:\Mẫu TKPM\Project\CuaHangDienThoai\CuaHangDienThoai\obj\Debug\netcoreapp3.0\CuaHangDienThoai.dll
 D:\Mẫu TKPM\Project\CuaHangDienThoai\CuaHangDienThoai\obj\Debug\netcoreapp3.0\CuaHangDienThoai.pdb
 D:\Mẫu TKPM\Project\CuaHangDienThoai\CuaHangDienThoai\obj\Debug\netcoreapp3.0\CuaHangDienThoai.genruntimeconfig.cache
+D:\Mẫu TKPM\Project\CuaHangDienThoai\CuaHangDienThoai\obj\Debug\netcoreapp3.0\CuaHangDienThoai.sourcelink.json

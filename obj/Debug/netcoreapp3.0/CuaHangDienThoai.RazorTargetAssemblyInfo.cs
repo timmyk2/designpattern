@@ -17,7 +17,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyProductAttribute("CuaHangDienThoai")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5c7edb1b26d617d4cdade199eb0696e2e67aa5eb")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CuaHangDienThoai.Views")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
