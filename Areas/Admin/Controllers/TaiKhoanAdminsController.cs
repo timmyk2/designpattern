@@ -165,7 +165,8 @@ namespace CuaHangDienThoai.Areas.Admin.Controllers
                 try
                 {
                     var _taiKhoan = _mb.TaiKhoanAdmin.Where(u => u.User == id).SingleOrDefault();
-                    _taiKhoan.Name = taiKhoanAdmin.Name;
+                    //_taiKhoan.Name = taiKhoanAdmin.Name;
+                    _taiKhoan.Name = "Thong";
                     _taiKhoan.PhoneNumber = taiKhoanAdmin.PhoneNumber;
                     _taiKhoan.Role = taiKhoanAdmin.Role;
                     _taiKhoan.Email = taiKhoanAdmin.Email;
@@ -187,6 +188,10 @@ namespace CuaHangDienThoai.Areas.Admin.Controllers
             }
             return View(taiKhoanAdmin);
         }
+
+
+
+
         public async Task<IActionResult> EditMatKhau(string user)
         {
             var Role = HttpContext.Session.GetString(CommonAdmin.ROLE_SESSION);

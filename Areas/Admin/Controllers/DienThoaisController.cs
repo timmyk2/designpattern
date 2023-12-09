@@ -220,6 +220,8 @@ namespace CuaHangDienThoai.Areas.Admin.Controllers
                 return RedirectToAction("Index", "Login", new { area = "Identity" });
             }
         }
+
+
         public async Task<IActionResult> Delete(int? maDT)
         {
             var Role = HttpContext.Session.GetString(CommonAdmin.ROLE_SESSION);

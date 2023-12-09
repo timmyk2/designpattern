@@ -59,6 +59,7 @@ namespace CuaHangDienThoai.Areas.Admin.Controllers
             }
             return View(chiTiet.OrderByDescending(ct => ct.MaHD));
         }
+     
         public async Task<IActionResult> Edit(string id)
         {
             var Role = HttpContext.Session.GetString(CommonAdmin.ROLE_SESSION);

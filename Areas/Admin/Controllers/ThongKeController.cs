@@ -9,6 +9,7 @@ using CuaHangDienThoai.Models;
 using CuaHangDienThoai.Models.View;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace CuaHangDienThoai.Areas.Admin.Controllers
 {
     [Area("Admin")]
@@ -122,6 +123,7 @@ namespace CuaHangDienThoai.Areas.Admin.Controllers
                         DoanhThu = item.DoanhThu
                     });
                 }
+
             }
             else
             {

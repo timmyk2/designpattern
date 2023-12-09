@@ -7,6 +7,8 @@ using CuaHangDienThoai.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using CuaHangDienThoai.Areas.Admin.Controllers.ViewHangFacade;
+
 
 namespace CuaHangDienThoai.Areas.Admin.Controllers
 {
@@ -15,12 +17,17 @@ namespace CuaHangDienThoai.Areas.Admin.Controllers
     {
         private readonly MobileContext _mb;
         private readonly ILogger<HangsController> _logger;
+
+        ViewHangFaCade facade;
         public HangsController(MobileContext mb, ILogger<HangsController> logger)
         {
             _mb = mb;
             _logger = logger;
             CategorySingleton.Instance.Init(mb);
             PrintInformation();
+
+            facade = new ViewHangFaCade(mb, logger);
+            facade.PrintRoutes();
         }
         public IActionResult Index()
         {
